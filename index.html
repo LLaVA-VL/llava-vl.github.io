@@ -109,8 +109,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">LLaVA: Large Language and Vision Assistant</h1>
-            <h2 class="title is-2 publication-title"></h2>
+            <h1 class="title is-1 publication-title">Visual Instruction Tuning</h1>
+            <h3 class="title is-3 publication-title">LLaVA: Large Language and Vision Assistant</h3>
             <div class="is-size-5">
               <span class="author-block">
                 <a href="https://hliu.cc/" style="color:#f68946;font-weight:normal;">Haotian Liu<sup>*</sup></a>,
@@ -189,7 +189,7 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <h4 class="subtitle has-text-centered">
-          LLaVA apresents a novel end-to-end trained large multimodal model that combines a vision encoder and Vicuna
+          LLaVA represents a novel end-to-end trained large multimodal model that combines a vision encoder and Vicuna
           for general-purpose visual and language understanding,
           achieving impressive chat capabilities and setting a new state-of-the-art accuracy on Science QA.
         </h4>
@@ -198,35 +198,145 @@
   </section>
 
 
-  <section class="section" style="background-color:#efeff081">
+
+  <section class="section"  style="background-color:#efeff081">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-six-fifths">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Instruction tuning large language models (LLMs) using machine-generated instruction-following data has
-              improved zero-shot capabilities on new tasks, but the idea is less explored in the multimodal field.
-              In this paper, we present the first attempt to use language-only GPT-4 to generate multimodal
-              language-image instruction-following data.
-              By instruction tuning on such generated data, we introduce <b>LLaVA</b>: <b>L</b>arge <b>L</b>anguage
-              <b>a</b>nd <b>V</b>ision <b>A</b>ssistant, an end-to-end trained large multimodal model that connects a
-              vision encoder and LLM for general-purpose visual and language understanding.
-              Our early experiments show that LLaVA demonstrates impressive multimodel chat abilities, sometimes
-              exhibiting the behaviors of multimodal GPT-4 on unseen images/instructions, and yields a 85.1% relative
-              score compared with GPT-4 on a synthetic multimodal instruction-following dataset.
-              When fine-tuned on Science QA, the synergy of LLaVA and GPT-4 achieves a new state-of-the-art accuracy of
-              92.53%.
-              We make GPT-4 generated visual instruction tuning data, our model and code base publicly available.
-            </p>
+              Instruction tuning large language models (LLMs) using machine-generated instruction-following data has improved zero-shot capabilities on new tasks in the language domain, but the idea is less explored in the multimodal field.
+              <ol type="1">
+                <li><b>Multimodal Instruct Data</b>. <span style="font-size: 95%;">We present the first attempt to use <a href="https://openai.com/research/gpt-4">language-only GPT-4</a> to generate multimodal language-image instruction-following data. </span></li>
+                <li><b>LLaVA Model</b>. <span style="font-size: 95%;">We introduce <it><b>LLaVA</b> (<b>L</b>arge <b>L</b>anguage-<b>a</b>nd-<b>V</b>ision <b>A</b>ssistant)</it>, an end-to-end trained large multimodal model that connects a vision encoder and LLM for general-purpose visual and language understanding.</li>
+                <li><b>Performance</b>. <span style="font-size: 95%;">Our early experiments show that LLaVA demonstrates impressive multimodel chat abilities, sometimes exhibiting the behaviors of multimodal GPT-4 on unseen images/instructions, and yields a 85.1% relative score compared with GPT-4 on a synthetic multimodal instruction-following dataset.
+                  When fine-tuned on <a href="https://scienceqa.github.io/">Science QA</a>, the synergy of LLaVA and GPT-4  achieves a new state-of-the-art accuracy of 92.53%.</li>
+                <li><b>Open-source</b>. <span style="font-size: 95%;">We make GPT-4 generated visual instruction tuning data, our model and code base publicly available.</li>
+              </ol>  
+           </p>
+  
           </div>
         </div>
       </div>
-
+        
     </div>
   </section>
 
+
+  
+<section class="section">
+  <!-- Results. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5886/5886212.png"> Multimodal Instrucion-Following Data</h2>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!--/ Results. -->    
+<div class="container is-max-desktop">
+
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <div class="content has-text-justified">
+        <p>
+          Based on the COCO dataset, we interact with langauge-only GPT-4, and collect 158K unique language-image instruction-following samples in total, including 58K in conversations, 23K in detailed description, and 77k in complex reasoning, respectively.
+          <a href="https://laion.ai/">[Download]</a>
+        
+        </p>
+      </div>              
+    </div>
+  </div>
+
+
+</section>
+ 
+
+<section class="section">
+  <!-- Results. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> LLaVA: Large Language-and-Vision Assistant</h2>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!--/ Results. -->    
+<div class="container is-max-desktop">
+
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <div class="content has-text-justified"> 
+        <p>
+          LLaVa connects pre-trained <a href="https://openai.com/research/clip">CLIP ViT-L/14</a> visual encoder and large language model <a href="https://github.com/facebookresearch/llama">LLaMA</a>, using a simple projection matrix.   We consider a two-stage instruction-tuning procedure:
+          <ul type="1">
+            <li><b>Stage 1: Pre-training for Feature Alignment</b>. <span style="font-size: 95%;">Only the projection matrix is updated, based on a subset of CC3M.</span></li>
+            <li><b>Stage 2: Fine-tuning End-to-End.</b>. <span style="font-size: 95%;">Both the projection matrix and LLM are updated for two different use senarios: 
+              <ul type="1">
+                <li> <b>Visual Chat</b>: LLaVA is fine-tuned on our generated multimodal instruction-following data for daily user-oriented applications. 
+                <li> <b>Science QA</b>: LLaVA is fine-tuned on this multimodal reasonsing dataset for the science domain.</span></li>
+              </ul>  
+          </ul>  
+        
+        </p>
+      </div>
+      <centering>
+        <div style="text-align: center;">
+          <img id="teaser" width="70%" src="images/llava_arch.png">     
+        </div>
+
+      
+      </centering>           
+    </div>
+  </div>
+
+
+</section>
+  
+
+
+<section class="section">
+  <!-- Results. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Performance</h2>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!--/ Results. -->    
+<div class="container is-max-desktop">
+
+
+  <!-- Grounedtext2img. -->
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-4"><img id="painting_icon" width="4%" src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png"> <span style="font-size: 120%;">Visual Chat:</span> Towards building multimodal GPT-4 level chatbot  </h2>
+      
+      <div>
+        <a href="https://plotly.com/~lichunyuan24/5/?share_key=d78QObaCAYCIy8PJpe3gd1" target="_blank" title="llava_gpt4_pie" style="display: block; text-align: center;">  <img id="painting_icon" width="90%" src="images/pie_llava_gpt4.png"> </a>
+
+    </div>
+
+    <p style="font-family:Times New Roman"><b>An evaluation dataset with 30 unseen images is constructed: each image is assocaited with three types of instructions: conversation, detailed description and complex reasoning. This leads to 90 new language-image instructions, on which we test LLaVA and GPT-4, and use GPT-4 to rate their responses from score 1 to 10. The summed score and relative score per type is reported. Overall, LLaVA achieves 85.1% relative score compared with GPT-4, indicating the effectinvess of the proposed self-instruct method in multimodal settings</b>               
+    </div>
+  </div>
+
+  <!-- Grounedtext2img. -->
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-4"> <img id="painting_icon" width="3%" src="https://scienceqa.github.io/img/logo.png"><span style="font-size: 120%;"> Science QA:</span> New SoTA with the synergy of LLaVA with GPT-4</h2>
+      
+      <div>
+        <a href="https://plotly.com/~lichunyuan24/1/?share_key=v4opE3TJpxqQ08RYsDD4iv" target="_blank" title="Plot 1" style="display: block; text-align: center;"><img id="painting_icon" width="65%" src="images/bar_llava_gpt4_scienceqa.png"></a>
+        <script data-plotly="lichunyuan24:1" sharekey-plotly="v4opE3TJpxqQ08RYsDD4iv" src="https://plotly.com/embed.js" async></script>
+    </div>
+        <p style="font-family:Times New Roman"><b>LLaVA alones achieve 90.92%. We use the text-only GPT-4 as the juedge, to predict the final answer based on its own previous answers and the LLaVA answers. This ``GPT-4 as juedge'' scheme yields a new SOTA 92.53%.</b>
+              
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container mt-5">
     <hr>
     <!-- <h2 class="text-center mb-5">Who's GPT-4's favorite? Battles between State-of-the-Art Chatbots</h2> -->
@@ -264,20 +374,41 @@
 
     <hr>
 
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <pre><code>
-          @article{liu2023xxxx,
-            author      = {Liu, Haotian and Li, Chunyuan and Wu, Qingyang and Lee, Yong Jae and Li, Chunyuan},
-            title       = {LLaVA: Large Language and Vision Assistant},
-            publisher   = {arXiv:xxxx},
-            year        = {2023},
-          }
-          </code></pre>
-      </div>
-    </section>
   </div>
+</section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+  @article{liu2023llava,
+    author      = {Liu, Haotian and Li, Chunyuan and Wu, Qingyang and Lee, Yong Jae},
+    title       = {Visual Instruction Tuning},
+    publisher   = {arXiv},
+    year        = {2023}
+  }
+  </code></pre>
+    </div>
+  </section>
+  
+  <section class="section" id="Acknowledgement">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgement</h2>
+      <p>
+        This website is adapted from <a
+        href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+      <a href='https://github.com/Computer-Vision-in-the-Wild/'><img id="painting_icon" width="10%" src="https://avatars.githubusercontent.com/u/97258247?s=200&v=4"></a> 
+      Related Links: 
+      <a href='https://react-vl.github.io/'>[REACT]</a>  
+      <a href='https://gligen.github.io/'>[GLIGEN]</a> 
+      <a href='https://github.com/Computer-Vision-in-the-Wild/'>[Computer Vision in the Wild (CVinW)]</a> 
+      <a href='https://instruction-tuning-with-gpt-4.github.io/'>[Insutrction Tuning with GPT-4]</a>      
+      </p>    
+    </div>
+  </section>
 
   <script>
     // Handle message showing
