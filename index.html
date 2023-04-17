@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Learning Customized Visual Models with Retrieval-Augmented Knowledge">
+  <meta name="keywords" content="retrieval, customization, vision language pretraining, external knowledge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Customized Visual Models with Retrieval-Augmented Knowledge</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">R<span style="font-size: 80%;">EACT: Learning Customized Visual Models with Retrieval-Augmented Knowledge</span> </h1>
+          <h2 class="title is-2 publication-title"></h2>
+          <div class="is-size-5">
+            <span class="author-block">
+              <a href="https://hliu.cc/" style="color:#f68946;font-weight:normal;">Haotian Liu</a>,
+            </span>
+            <span class="author-block">
+              <a href="#" style="color:#008AD7;font-weight:normal;">Kilho Son</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://jwyang.github.io/" style="color:#008AD7;font-weight:normal;">Jianwei Yang</a>,
+            </span>
+            <span class="author-block">
+              <a href="#" style="color:#008AD7;font-weight:normal;">Ce Liu</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.microsoft.com/en-us/research/people/jfgao/" style="color:#008AD7;font-weight:normal;">Jianfeng Gao</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://pages.cs.wisc.edu/~yongjaelee/" style="color:#f68946;font-weight:normal;">Yong Jae Lee<sup>*</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://chunyuan.li/" style="color:#008AD7;font-weight:normal;">Chunyuan Li<sup>*</sup></a>
+            </span>
+          </div>
+
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b> University of Wisconsin-Madison; </b></span>
+            <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Microsoft </span>
+            <span class="author-block">&nbsp&nbsp<sup>*</sup>Equal Advising</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2301.07094" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/microsoft/react" target="_blank" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                  </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="teaser" width="120%" src="images/concept.gif">
+      <h4 class="subtitle has-text-centered">
+        <em>
+        Introducing a customization stage to the lifecycle of foundation models!
+        <p>R<span style="font-size: 80%;">EACT</span> customizes foundation models to downstream tasks without the need of any labeled data.</p>
+      </em>
+      </h4>
+    </div>
+  </div>
+</section>
+
+
+<section class="section"  style="background-color:#efeff081">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Image-text contrastive learning models such as <a href="https://openai.com/blog/clip/">CLIP</a> and <a href="https://github.com/mlfoundations/open_clip">OpenCLIP</a> have demonstrated strong task transfer ability. 
+The high generality and usability of these visual models  is achieved via a web-scale data collection process to ensure broad concept coverage, followed by expensive pre-training to feed all the knowledge into model weights. 
+Alternatively, we propose <b>R<span style="font-size: 80%;">EACT</span></b>, <b>RE</b>trieval-<b>A</b>ugmented <b>C</b>us<b>T</b>omization, a framework to acquire the relevant web knowledge to build customized visual models for target domains.
+We retrieve the most relevant image-text pairs (~3% of CLIP pre-training data) from the  <a href="https://laion.ai/">web-scale database</a> as external knowledge, and propose to customize the model by only training new modualized blocks while freezing all the original weights.
+The effectiveness of R<span style="font-size: 80%;">EACT</span> is demonstrated via extensive experiments on classification, retrieval, detection and segmentation tasks, including zero, few, and full-shot settings.
+Particularly, on the zero-shot classification task, compared with CLIP, it achieves up to 5.4% improvement on ImageNet and 3.7% improvement on the 20 image classification datasets in <a href="https://computer-vision-in-the-wild.github.io/ELEVATER/">ELEVATER benchmark</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+</section>
+
+<section class="section">
+  <!-- Results. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> Method: Retrieval-Augmented Customization</h2>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!--/ Results. -->    
+<div class="container is-max-desktop">
+
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <div class="content has-text-justified">
+        <p>
+          Given a downstream visual task, REACT considers a <it>retrieval-then-customization</it> procedure:
+          <ol type="1">
+            <li><b>Retrieval</b>. <span style="font-size: 95%;">Task instruction is augmented with free knowledge from the web (eg, <a href="https://laion.ai/">LAION</a>), without any downstream labelled data</span></li>
+            <li><b>Customization</b>. <span style="font-size: 95%;">A lightweight training process to build customized models from a foundation model</li>
+          </ol>  
+        
+        </p>
+      </div>
+      <img id="teaser" width="79%" src="images/model_tuning_cmp.png">
+      <img id="teaser" width="19%" src="images/gated_sa_module.png">
+      <h1>
+        <p style="font-family:Times New Roman"><b>Illustrative comparisons across different model tuning methods. (a) and (b) are existing baseline tuning methods. For model
+          customization in a target domain, In R<span style="font-size: 80%;">EACT</span>, we found that (c) and (d) work better. One layer of the proposed modularized image encoder in locked-text
+          gated-image tuning is illustrated in right side.</b>
+      </h1>                 
+    </div>
+  </div>
+
+
+</section>
+  
+
+<section class="section">
+  <!-- Results. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Results</h2>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!--/ Results. -->    
+<div class="container is-max-desktop">
+
+
+  <!-- Grounedtext2img. -->
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-4">Overview: R<span style="font-size: 80%;">EACT</span> transfer better than CLIP on five different tasks</h2>
+      <img id="teaser" width="95%" src="images/all_task_gains.png">
+      <h1>
+        <p style="font-family:Times New Roman"><b>R<span style="font-size: 80%;">EACT</span> consistently transfer better than CLIP on across a variety of tasks, including ImageNet classification,  zero/few/full-shot classification on 20 datasets in ELEVATER benchmark, image-text retrieval, object detection and segmentation.</b>
+      </h1>                 
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <!-- counterfactual. -->
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-4">ImageNet-1K</h2>
+      <img id="teaser" width="95%" src="images/in1k_gains.png">
+      <h1>
+        <p style="font-family:Times New Roman"><b>R<span style="font-size: 80%;">EACT</span> achieves the best zero-shot ImageNet performance among public checkpoints with nearly 5x smaller data size (Left), and achieves the new SoTA on <a href="https://paperswithcode.com/sota/semi-supervised-image-classification-on-1">semi-supervised ImageNet classification in the 1% labeled data setting</a> (Right).</b>
+      </h1>                 
+    </div>
+  </div>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+@article{liu2023react,
+  author      = {Liu, Haotian and Son, Kilho and Yang, Jianwei and Liu, Ce and Gao, Jianfeng and Lee, Yong Jae and Li, Chunyuan},
+  title       = {Learning Customized Visual Models with Retrieval-Augmented Knowledge},
+  publisher   = {arXiv:2301.07094},
+  year        = {2023},
+}
+</code></pre>
+  </div>
+</section>
+
+<section class="section" id="Acknowledgement">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgement</h2>
+    <p>
+      This website is adapted from <a
+      href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+      Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+    <p>
+    <img id="painting_icon" width="5%" src="https://avatars.githubusercontent.com/u/97258247?s=200&v=4">
+    Related Links: 
+    <a href='https://github.com/Computer-Vision-in-the-Wild/'>[Computer Vision in the Wild (CVinW)]</a> 
+    <a href='https://github.com/microsoft/klite'>[K-LITE]</a>  
+    <a href='https://computer-vision-in-the-wild.github.io/ELEVATER/'>[ELEVATER]</a>  
+    <a href='https://gligen.github.io/'>[GLIGEN]</a>  
+    </p>    
+  </div>
+</section>
+
+
+  
+</body>
+</html>
