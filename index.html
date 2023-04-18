@@ -20,6 +20,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.27.0/gradio.js"></script>
 </head>
 
 <style>
@@ -141,7 +142,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2301.07094" target="_blank"
+                  <a href="#" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -150,7 +151,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/microsoft/react" target="_blank"
+                  <a href="https://github.com/haotian-liu/LLaVA" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -159,7 +160,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://aka.ms/gligen" target="_blank"
+                  <a href="https://llava.hliu.cc" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
@@ -191,13 +192,17 @@
         <h4 class="subtitle has-text-centered">
           LLaVA represents a novel end-to-end trained large multimodal model that combines a vision encoder and Vicuna
           for general-purpose visual and language understanding,
-          achieving impressive chat capabilities and setting a new state-of-the-art accuracy on Science QA.
+          achieving impressive chat capabilities mimicking spirits of  and setting a new state-of-the-art accuracy on Science QA.
         </h4>
       </div>
     </div>
   </section>
 
-
+  <section class="section"  style="background-color:#efeff081">
+    <div class="container is-max-desktop">
+      <gradio-app src="https://llava-embed.hliu.cc"></gradio-app>
+    </div>
+  </section>
 
   <section class="section"  style="background-color:#efeff081">
     <div class="container is-max-desktop">
