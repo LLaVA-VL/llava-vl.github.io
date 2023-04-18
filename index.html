@@ -100,6 +100,10 @@
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
   }
+
+  #gradio pre {
+    background-color: transparent;
+  }
 </style>
 
 <body>
@@ -220,7 +224,7 @@
   </section>
 
   <section class="section"  style="background-color:#efeff081">
-    <div class="container is-max-desktop">
+    <div class="container is-max-desktop" id="gradio">
       <gradio-app src="https://llava-embed.hliu.cc"></gradio-app>
     </div>
   </section>
