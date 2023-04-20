@@ -273,9 +273,121 @@
         <p>
           Based on the COCO dataset, we interact with langauge-only GPT-4, and collect 158K unique language-image instruction-following samples in total, including 58K in conversations, 23K in detailed description, and 77k in complex reasoning, respectively. Please check out ``LLaVA-Instruct-150K''' on 
           <a href="https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K">[HuggingFace Dataset]</a>.
-        
+
+<!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
+<style>
+  table.GeneratedTable {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #c1c4c5;
+    border-style: solid;
+    color: #000000;
+  }
+  
+  table.GeneratedTable td, table.GeneratedTable th {
+    border-width: 2px;
+    border-color: #9b9d9e;
+    border-style: solid;
+    padding: 3px;
+  }
+  
+  table.GeneratedTable thead {
+    background-color: #6691ee;
+  }
+  </style>
+  
+  <!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
+  <div class="column is-six-fifths" width="80%">
+  <table class="GeneratedTable">
+    <thead>
+      <tr>
+        <th>Data file name</th>
+        <th>File Size</th>
+        <th>Sample Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/raw/main/conversation_58k.json">conversation_58k.json</a> </td>
+        <td>126 MB</td>
+        <td>58K</td>
+      </tr>
+      <tr>
+        <td><a href="https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/raw/main/detail_23k.json">detail_23k.json</a></td>
+        <td>20.5 MB</td>
+        <td>23K</td>
+      </tr>
+      <tr>
+        <td><a href="https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K/raw/main/complex_reasoning_77k.json">complex_reasoning_77k.json</a></td>
+        <td>79.6 MB</td>
+        <td>77K</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <!-- Codes by Quackit.com -->
+  
         </p>
-      </div>              
+        <p>
+          For each subset, we visualize the root noun-verb pairs for the instruction and response. For each chart, please click the link for the interactive page to check out the noun-verb pairs whose frequency is higher the given number.        
+        </p>
+      </div>
+
+  
+
+
+
+
+      <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">  
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_instruction_verb_noun_50.png">  
+          <figcaption>
+            Instruction: Conversation [<a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_instruction_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_instruction_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_instruction_verb_noun_50.html">50</a>]
+          </figcaption>
+        </figure>
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/detail_23k_instruction_verb_noun_0.png">  
+          <figcaption>
+            Instruction: Detailed Description  [<a href="images/LLaVA-Instruct-150K_noun_verb/detail_23k_instruction_verb_noun_0.html">0</a>]
+          </figcaption>
+        </figure>
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_instruction_verb_noun_50.png">  
+          <figcaption>
+            Instruction: Complex Reasoning   [<a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_instruction_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_instruction_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_instruction_verb_noun_50.png">50</a>]
+          </figcaption>
+        </figure>
+      </div>
+      </div>  
+
+
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">  
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_response_verb_noun_50.png">  
+            <figcaption>
+              Response: Conversation [<a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_response_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_response_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_response_verb_noun_50.html">50</a>]
+            </figcaption>
+          </figure>
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/detail_23k_response_verb_noun_50.png">  
+            <figcaption>
+              Response: Detailed Description  [<a href="images/LLaVA-Instruct-150K_noun_verb/detail_23k_response_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/detail_23k_response_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/detail_23k_response_verb_noun_50.html">50</a>]
+            </figcaption>
+          </figure>
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_response_verb_noun_50.png">  
+            <figcaption>
+              Response: Complex Reasoning   [<a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_response_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_response_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_response_verb_noun_50.png">50</a>]
+            </figcaption>
+          </figure>
+        </div>
+        </div>      
+
     </div>
   </div>
 
