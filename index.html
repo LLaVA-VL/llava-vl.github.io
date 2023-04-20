@@ -410,7 +410,7 @@
     <div class="column is-full-width">
       <div class="content has-text-justified"> 
         <p>
-          LLaVa connects pre-trained <a href="https://openai.com/research/clip">CLIP ViT-L/14</a> visual encoder and large language model <a href="https://github.com/facebookresearch/llama">LLaMA</a>, using a simple projection matrix.   We consider a two-stage instruction-tuning procedure:
+          LLaVa connects pre-trained <a href="https://openai.com/research/clip">CLIP ViT-L/14</a> visual encoder and large language model <a href="https://github.com/lm-sys/FastChat">Vicuna</a>, using a simple projection matrix.   We consider a two-stage instruction-tuning procedure:
           <ul type="1">
             <li><b>Stage 1: Pre-training for Feature Alignment</b>. <span style="font-size: 95%;">Only the projection matrix is updated, based on a subset of CC3M.</span></li>
             <li><b>Stage 2: Fine-tuning End-to-End.</b>. <span style="font-size: 95%;">Both the projection matrix and LLM are updated for two different use senarios: 
