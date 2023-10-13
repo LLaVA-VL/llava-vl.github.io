@@ -309,7 +309,7 @@
     <div class="column is-full-width">
       <div class="content has-text-justified">
         <p>
-          Based on the COCO dataset, we interact with langauge-only GPT-4, and collect 158K unique language-image instruction-following samples in total, including 58K in conversations, 23K in detailed description, and 77k in complex reasoning, respectively. Please check out ``LLaVA-Instruct-150K''' on 
+          Based on the COCO dataset, we interact with language-only GPT-4, and collect 158K unique language-image instruction-following samples in total, including 58K in conversations, 23K in detailed description, and 77k in complex reasoning, respectively. Please check out ``LLaVA-Instruct-150K''' on 
           <a href="https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K">[HuggingFace Dataset]</a>.
 
 <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
@@ -451,7 +451,7 @@
           LLaVa connects pre-trained <a href="https://openai.com/research/clip">CLIP ViT-L/14</a> visual encoder and large language model <a href="https://github.com/lm-sys/FastChat">Vicuna</a>, using a simple projection matrix.   We consider a two-stage instruction-tuning procedure:
           <ul type="1">
             <li><b>Stage 1: Pre-training for Feature Alignment</b>. <span style="font-size: 95%;">Only the projection matrix is updated, based on a subset of CC3M.</span></li>
-            <li><b>Stage 2: Fine-tuning End-to-End.</b>. <span style="font-size: 95%;">Both the projection matrix and LLM are updated for two different use senarios: 
+            <li><b>Stage 2: Fine-tuning End-to-End</b>. <span style="font-size: 95%;">Both the projection matrix and LLM are updated for two different use senarios: 
               <ul type="1">
                 <li> <b>Visual Chat</b>: LLaVA is fine-tuned on our generated multimodal instruction-following data for daily user-oriented applications. 
                 <li> <b>Science QA</b>: LLaVA is fine-tuned on this multimodal reasonsing dataset for the science domain.</span></li>
@@ -514,7 +514,7 @@
         <a href="https://plotly.com/~lichunyuan24/1/?share_key=v4opE3TJpxqQ08RYsDD4iv" target="_blank" title="Plot 1" style="display: block; text-align: center;"><img id="painting_icon" width="65%" src="images/bar_llava_gpt4_scienceqa.png"></a>
         <script data-plotly="lichunyuan24:1" sharekey-plotly="v4opE3TJpxqQ08RYsDD4iv" src="https://plotly.com/embed.js" async></script>
     </div>
-        <p style="font-family:Times New Roman"><b>LLaVA alones achieve 90.92%. We use the text-only GPT-4 as the juedge, to predict the final answer based on its own previous answers and the LLaVA answers. This ``GPT-4 as juedge'' scheme yields a new SOTA 92.53%.</b>
+        <p style="font-family:Times New Roman"><b>LLaVA alones achieve 90.92%. We use the text-only GPT-4 as the judge, to predict the final answer based on its own previous answers and the LLaVA answers. This "GPT-4 as judge" scheme yields a new SOTA 92.53%.</b>
               
     </div>
   </div>
