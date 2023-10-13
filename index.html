@@ -114,9 +114,10 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Visual Instruction Tuning</h1>
-            <h3 class="title is-3 publication-title">LLaVA: Large Language and Vision Assistant</h3>
-            <div class="is-size-5">
+            <h1 class="title is-1 publication-title">LLaVA: <span class="is-size-2"><span class="is-size-1">L</span>arge <span class="is-size-1">L</span>anguage <span class="is-size-1">a</span>nd <span class="is-size-1">V</span>ision <span class="is-size-1">A</span>ssistant</span></h1>
+            <h3 class="title is-3 publication-title">Visual Instruction Fine-tuning</h3>
+            <h5 class="subtitle is-5 publication-awards">NeurIPS 2023 (Oral)</h5>
+            <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://hliu.cc/" style="color:#f68946;font-weight:normal;">Haotian Liu<sup>*</sup></a>,
               </span>
@@ -128,20 +129,46 @@
               </span>
               <span class="author-block">
                 <a href="https://pages.cs.wisc.edu/~yongjaelee/" style="color:#f68946;font-weight:normal;">Yong Jae
-                  Lee</a>,
+                  Lee</a>
               </span>
             </div>
 
-            <br>
             <div class="is-size-5 publication-authors">
               <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b> University of
                 Wisconsin-Madison</b></span>
               <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Microsoft Research</span>
               <span class="author-block"><b style="color:#F2A900; font-weight:normal">&#x25B6 </b>Columbia
                 University</span>
-              <span class="author-block">&nbsp&nbsp<sup>*</sup>Equal Contribution</span>
             </div>
 
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal Contribution</span>
+            </div>
+
+            
+          <!-- <div class="column has-text-centered">
+            <h3 class="title is-3 publication-title">Improved Baselines with Visual Instruction Fine-tuning</h3>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://hliu.cc/" style="color:#f68946;font-weight:normal;">Haotian Liu<sup>*</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://chunyuan.li/" style="color:#008AD7;font-weight:normal;">Chunyuan Li<sup>*</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://yuheng-li.github.io" style="color:#008AD7;font-weight:normal;">Yuheng Li</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://pages.cs.wisc.edu/~yongjaelee/" style="color:#f68946;font-weight:normal;">Yong Jae
+                  Lee</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b> University of
+                Wisconsin-Madison</b></span>
+              <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Microsoft Research</span>
+            </div> -->
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -152,6 +179,15 @@
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2310.03744" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv (LLaVA-1.5)</span>
                   </a>
                 </span>
                 <span class="link-block">
@@ -215,6 +251,8 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <h4 class="subtitle has-text-centered">
+          🔥<span style="color: #ff3860">[NEW!]</span> LLaVA-1.5 achieves SoTA on 11 benchmarks, with just simple modifications to the original LLaVA, utilizes all public data, completes training in ~1 day on a single 8-A100 node, and surpasses methods that use billion-scale data.
+          <br><br>
           LLaVA represents a novel end-to-end trained large multimodal model that combines a vision encoder and Vicuna
           for general-purpose visual and language understanding,
           achieving impressive chat capabilities mimicking spirits of the multimodal GPT-4 and setting a new state-of-the-art accuracy on Science QA.
@@ -565,10 +603,17 @@
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-  @article{liu2023llava,
+  @misc{liu2023improvedllava,
+          author={Liu, Haotian and Li, Chunyuan and Li, Yuheng and Lee, Yong Jae},
+          title={Improved Baselines with Visual Instruction Tuning}, 
+          publisher={arXiv:2310.03744},
+          year={2023},
+  }
+
+  @inproceedings{liu2023llava,
     author      = {Liu, Haotian and Li, Chunyuan and Wu, Qingyang and Lee, Yong Jae},
     title       = {Visual Instruction Tuning},
-    publisher   = {arXiv:2304.08485},
+    booktitle   = {NeurIPS},
     year        = {2023}
   }
   </code></pre>
